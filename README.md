@@ -4,7 +4,7 @@
 This is a public API developed as part of the HNG12 Stage 1 Backend Task. It classifies numbers and provides interesting mathematical properties, along with a fun fact.
 
 ## API Endpoint
-- **URL**: "https://number-classification-api.onrender.com"
+- **URL**: "https://number-classification-api-bj7o.onrender.com"
 - **Method**: "GET"
 - **GET /api/classify-number?number={number}**: Returns JSON with:
   - Number
@@ -16,7 +16,7 @@ This is a public API developed as part of the HNG12 Stage 1 Backend Task. It cla
 
 ### Example Request
 ```bash
-GET https://number-classification-api.onrender.com/api/classify-number?number=371
+GET https://number-classification-api-bj7o.onrender.com/api/classify-number?number=371
 ```
 
 ### Example Response (200 OK)
@@ -57,4 +57,4 @@ node index.js
 ```
 
 ## Deployment
-The API is deployed and publicly accessible at: [number-classification-api](https://number-classification-api.onrender.com)
+The API is deployed and publicly accessible at: [number-classification-api](https://number-classification-api-bj7o.onrender.com)
