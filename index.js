@@ -3,7 +3,7 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
 app.use(cors());
 
@@ -28,14 +28,14 @@ const isPerfect = (number) => {
         if (number % i === 0) {
             sum += i;
             if (i !== number / i) sum += number / i;
-        }
-    }
+        };
+    };
     return number > 1 && sum === number;
 };
 
 const getFunFact = async (number) => {
     try {
-        const response = await axios.get(`http://numbersapi.com/${number}/math`);
+        const response = await axios.get(`http://numbersapi.com/${number}/math`)
         return response.data;
     } catch (error) {
         return 'No fun fact available.';
@@ -46,16 +46,14 @@ app.get('/api/classify-number', async (req, res) => {
     const number = parseInt(req.query.number);
 
     if (isNaN(number)) {
-        return res.status(400).json({ number: req.query.number, error: true });
-    }
+        return res.status(400).json({ number: req.query.number, error: true});
+    };
 
     const prime = isPrime(number);
     const armstrong = isArmstrong(number);
     const perfect = isPerfect(number);
     const digitSum = number.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
-    const properties = [];
-    if (armstrong) properties.push('armstrong');
-    properties.push(number % 2 === 0 ? 'even' : 'odd');
+    const properties = [armstrong ? 'armstrong': '', number % 2 === 0 ? 'even' : 'odd'].filter(Boolean);
     const funFact = await getFunFact(number);
 
     res.status(200).json({
@@ -69,7 +67,7 @@ app.get('/api/classify-number', async (req, res) => {
 });
 
 app.use((req, res) => {
-    res.status(404).json({ error: 'Not Found', message: 'The requested resource does not exist.' });
+    res.status(404).json({ error: 'Not Found', message: 'The requested resource does not exist.'});
 });
 
 app.listen(port, () => {
