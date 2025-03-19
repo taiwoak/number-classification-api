@@ -1,7 +1,7 @@
 # Number Classification API (Node.js)
 
 ## Description
-This is a public API developed as part of the HNG12 Stage 1 Backend Task. It classifies numbers and provides interesting mathematical properties, along with a fun fact.
+This is a public API that classifies numbers and provides interesting mathematical properties, along with a fun fact.
 
 ## API Endpoint
 - **URL**: "https://number-classification-api-bj7o.onrender.com"
